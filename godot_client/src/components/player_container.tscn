@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://1vfr3b6k5xmy"]
+
+[ext_resource type="Script" path="res://src/components/player_container.gd" id="1_vwm4e"]
+[ext_resource type="PackedScene" uid="uid://ksg0qm1n5jaq" path="res://src/components/player_card.tscn" id="1_xdjcd"]
+
+[node name="PlayerContainer" type="HBoxContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+script = ExtResource("1_vwm4e")
+player_card_scene = ExtResource("1_xdjcd")
+
+[node name="player_card" parent="." instance=ExtResource("1_xdjcd")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="player_card2" parent="." instance=ExtResource("1_xdjcd")]
+layout_mode = 2
+
+[node name="player_card3" parent="." instance=ExtResource("1_xdjcd")]
+layout_mode = 2
+
+[node name="player_card4" parent="." instance=ExtResource("1_xdjcd")]
+layout_mode = 2
+
+[node name="player_card5" parent="." instance=ExtResource("1_xdjcd")]
+layout_mode = 2
+
+[node name="player_card6" parent="." instance=ExtResource("1_xdjcd")]
+layout_mode = 2

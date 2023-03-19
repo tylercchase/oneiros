@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckkji20tkew6b"]
+
+[ext_resource type="PackedScene" uid="uid://bf30dtwrjo63q" path="res://src/scenes/title.tscn" id="1_qfxem"]
+[ext_resource type="Theme" uid="uid://c8bme7eoj0p2c" path="res://src/assets/main_theme.tres" id="1_xqtbj"]
+[ext_resource type="Script" path="res://src/managers/scene_manager.gd" id="2_ojgpd"]
+[ext_resource type="Script" path="res://src/managers/connection_manager.gd" id="4_fy6wb"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xqtbj")
+
+[node name="TitleScreen" parent="." instance=ExtResource("1_qfxem")]
+layout_mode = 1
+
+[node name="SceneManager" type="Node" parent="." node_paths=PackedStringArray("current_scene")]
+script = ExtResource("2_ojgpd")
+current_scene = NodePath("../TitleScreen")
+
+[node name="ConnectionManager" type="Node" parent="."]
+script = ExtResource("4_fy6wb")

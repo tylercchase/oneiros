@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://codpp2sfv4c2s"]
+
+[ext_resource type="Theme" uid="uid://c8bme7eoj0p2c" path="res://src/assets/main_theme.tres" id="1_45p1c"]
+[ext_resource type="Script" path="res://src/scenes/game_scenes/interactions/writing_scene.gd" id="1_bxaef"]
+[ext_resource type="PackedScene" uid="uid://cu035qt5x8pe2" path="res://src/components/timer_progress_bar.tscn" id="2_l7o75"]
+[ext_resource type="PackedScene" uid="uid://1vfr3b6k5xmy" path="res://src/components/player_container.tscn" id="3_mgmcm"]
+
+[node name="writing_scene" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_45p1c")
+script = ExtResource("1_bxaef")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="TimerProgressBar" parent="." instance=ExtResource("2_l7o75")]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is a test sentence."
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.74902, 0.278431, 1)
+text = "_________"
+
+[node name="PlayerContainer" parent="." instance=ExtResource("3_mgmcm")]
+layout_mode = 2

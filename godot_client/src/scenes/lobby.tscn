@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpm0fgb8i2krg"]
+
+[ext_resource type="Script" path="res://src/scenes/lobby.gd" id="1_2733h"]
+[ext_resource type="Theme" uid="uid://c8bme7eoj0p2c" path="res://src/assets/main_theme.tres" id="1_q3iwm"]
+[ext_resource type="PackedScene" uid="uid://1vfr3b6k5xmy" path="res://src/components/player_container.tscn" id="2_3vavj"]
+
+[node name="LobbyScreen" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q3iwm")
+script = ExtResource("1_2733h")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="PlayerContainer2" parent="." instance=ExtResource("2_3vavj")]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Join with the room code"
+horizontal_alignment = 1
+
+[node name="GameCodeLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "CSYA"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "at oneiroi.app"
+horizontal_alignment = 1
+
+[node name="PlayerContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+text = "Start Game"
